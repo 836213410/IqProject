@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.ibatis.plugin.Interceptor;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -63,7 +63,9 @@ public class MybatisPlusConfig {
 		mybatisPlus.setConfiguration(mc);
 		PathMatchingResourcePatternResolver matchingResourcePatternResolver = new PathMatchingResourcePatternResolver();
 		mybatisPlus.setMapperLocations(matchingResourcePatternResolver.getResources("classpath:mapper/*.xml"));
-
+//		关键代码 设置 MyBatis-Plus 分页插件
+		Interceptor[] plugins = {paginationInterceptor()};
+		mybatisPlus.setPlugins(plugins);
 		return mybatisPlus;
 	}
 
