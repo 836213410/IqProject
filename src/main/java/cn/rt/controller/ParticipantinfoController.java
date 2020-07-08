@@ -50,7 +50,7 @@ public class ParticipantinfoController {
 		participantinfo.setAgegroup(req.getAgegroup());
 		participantinfo.setCratedate(new Date());
 		participantinfo.setEducationallevel(req.getEducationallevel());
-		participantinfo.setGrossscore(0);
+		participantinfo.setGrossscore(-1);
 		participantinfo.setResearcharea(req.getResearcharea());
 		participantinfoService.save(participantinfo);
 		Integer insertParticipantid = participantinfo.getParticipantid();
