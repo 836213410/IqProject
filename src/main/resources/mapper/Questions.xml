@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.rt.mapper.QuestionsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.rt.vo.Questions">
+        <id column="questionid" property="questionid" />
+        <result column="questioncontext" property="questioncontext" />
+        <result column="createdate" property="createdate" />
+        <result column="sort" property="sort" />
+        <result column="module" property="module" />
+        <result column="correctanswerid" property="correctanswerid" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        questionid, questioncontext, createdate, sort, module, correctanswerid
+    </sql>
+
+</mapper>

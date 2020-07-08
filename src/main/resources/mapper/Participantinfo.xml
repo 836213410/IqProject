@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.rt.mapper.ParticipantinfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.rt.vo.Participantinfo">
+        <id column="participantid" property="participantid" />
+        <result column="agegroup" property="agegroup" />
+        <result column="educationallevel" property="educationallevel" />
+        <result column="researcharea" property="researcharea" />
+        <result column="cratedate" property="cratedate" />
+        <result column="grossscore" property="grossscore" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        participantid, agegroup, educationallevel, researcharea, cratedate, grossscore
+    </sql>
+
+</mapper>
